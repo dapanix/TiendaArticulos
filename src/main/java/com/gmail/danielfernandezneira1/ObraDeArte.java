@@ -9,7 +9,7 @@ public class ObraDeArte extends Articulo {
 
 
     public ObraDeArte(Arte tipo, String autor, String descripcion, int origen, double precioCompra, LocalDate fechaCompra, double precioVenta) {
-        super(descripcion, origen, precioCompra, fechaCompra, TipoArticulo.ObraDeArte){
+        super(descripcion, origen, precioCompra, fechaCompra, TipoArticulo.ObraDeArte);
             if (tipo.equals("escultura") || tipo.equals("pintura") || tipo.equals("fotografia") || tipo.equals("otro") || tipo.equals("grabado")) {
                 this.tipo = tipo;
             } else {
