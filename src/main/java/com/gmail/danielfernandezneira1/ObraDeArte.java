@@ -18,7 +18,7 @@ public class ObraDeArte extends Articulo {
             }
             this.precioVenta = precioCompra + precioCompra * Arte.otro.getCostroextra(tipo);
         }
-    }
+
 
 
         @Override
@@ -32,5 +32,6 @@ public class ObraDeArte extends Articulo {
                     ", fechaCompra=" + getFechaCompra() +
                     '}';
         }
+
 
 }

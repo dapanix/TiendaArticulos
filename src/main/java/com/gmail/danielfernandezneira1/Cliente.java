@@ -1,7 +1,7 @@
 package com.gmail.danielfernandezneira1;
 
 public class Cliente {
-private int dni;
+private String dni;
 String nombre;
 int telefono;
 String email;
@@ -9,7 +9,7 @@ double descuentoAcumulado;
 String direccion;
 Contrato contrato;
 
-    public Cliente(int dni, String nombre, int telefono, String email, String direccion, Contrato contrato) {
+    public Cliente(String dni, String nombre, int telefono, String email, String direccion, Contrato contrato) {
         this.dni = dni;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -26,7 +26,7 @@ Contrato contrato;
         return descuentoAcumulado;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
@@ -45,6 +45,19 @@ Contrato contrato;
         }else{
             return false;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "dni='" + dni + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", telefono=" + telefono +
+                ", email='" + email + '\'' +
+                ", descuentoAcumulado=" + descuentoAcumulado +
+                ", direccion='" + direccion + '\'' +
+                ", contrato=" + contrato +
+                '}';
     }
 }
 

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 public class Ventas {
     Cliente cliente;
     Articulo articulo;
-    ArrayList<Articulo> listaArticulos = new ArrayList<Articulo>();
+     ArrayList<Articulo> listaArticulos = new ArrayList<Articulo>();
     double total=0;
 
 
     public Ventas(Cliente cliente) {
         this.cliente = cliente;
     }
-    public boolean IncluirArticulo(Articulo articulo){
+    public boolean incluirArticulo(Articulo articulo){
         if (articulo.estado.equals("en venta")){
             if (!contieneArticulo(articulo)){
                 listaArticulos.add(articulo);
@@ -53,5 +53,8 @@ public class Ventas {
         return "Ventas [cliente=" + cliente + ", articulo=" + articulo + ", listaArticulos=" + listaArticulos
                 + ", total=" + total + "]";
     }
-    
+
+    public ArrayList<Articulo> getListaArticulos() {
+        return listaArticulos;
+    }
 }

@@ -5,12 +5,12 @@ import java.time.LocalDate;
 public class Articulo {
 
      String ID;
-     double precioCompra;
-     String descripcion;
-     int origen; //año de origen
-     LocalDate fechaCompra;
-     TipoArticulo tipo;
-     public String estado= "en venta";
+     private double precioCompra;
+     private String descripcion;
+    private int origen; //año de origen
+    private LocalDate fechaCompra;
+    TipoArticulo tipo;
+     String estado= "en venta";
      int precioVenta;
 
 
@@ -70,5 +70,21 @@ public class Articulo {
         }
         System.out.println("los articulos no son iguales, difieren en el tipo de articulo");
         return false;
+    }
+
+    public void setPrecioCompra(double precioCompra) {
+        this.precioCompra = precioCompra;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setOrigen(int origen) {
+        this.origen = origen;
+    }
+
+    public void setFechaCompra(LocalDate fechaCompra) {
+        this.fechaCompra = fechaCompra;
     }
 }

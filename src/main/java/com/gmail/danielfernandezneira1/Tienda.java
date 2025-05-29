@@ -1,6 +1,7 @@
 package com.gmail.danielfernandezneira1;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Tienda {
     private ArrayList<Articulo> listaArticuloTienda = new ArrayList<Articulo>(); 
@@ -23,12 +24,16 @@ public class Tienda {
     public void registrarVenta(Ventas venta){
             listaVentas.add(venta);
     }
+
+
+
         public boolean registrarCliente(Cliente cliente){
             if (!listaClientes.contains(cliente)){
                 listaClientes.add(cliente);
                 return true;
         }return false;
     }
+
     public boolean articuloRegistrado(Articulo articulo){
         if (listaArticuloTienda.contains(articulo)){
             return true;
@@ -57,15 +62,24 @@ public Articulo buscarArticuloPorDescripcion(String descripcion) {
 }
 
 public Cliente buscarClientePorDni(String dni) {
+    Scanner s = new Scanner(System.in);
+
     try {
-        int dniInt = Integer.parseInt(dni);
+
         for (Cliente cliente : listaClientes) {
-            if (cliente.getDni() == dniInt) {
+            if (cliente.getDni().equals(dni)) {
                 return cliente;
             }
         }
     } catch (NumberFormatException e) {
         System.out.println("DNI inválido: " + dni);
+    }
+    System.out.println("presione 1 para salir no se guardaran los datos de el articulo actual-");
+    String fecha2 = s.nextLine();
+    if (fecha2.equals("1")) {
+        Main.pantalladeInicio();
+    }else{
+        buscarClientePorDni(dni);
     }
     return null;
 }
@@ -111,5 +125,7 @@ public void mostrarTodosLasVentas() {
     }
 }
 
-
+    public ArrayList<Cliente> getListaClientes() {
+        return listaClientes;
+    }
 }
